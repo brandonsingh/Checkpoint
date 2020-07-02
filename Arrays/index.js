@@ -213,7 +213,7 @@ retrieveValue(twoDimentionArray, 3, 1) ===> 1
 
 function retrieveValue(arr, row, col) {
   // CODE HERE
-  return arr[row][col];
+  //return arr[row][col];
 }
 
 /*
