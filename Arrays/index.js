@@ -40,6 +40,7 @@ pushTrue([1,2,3]) ===> [1, 2, 3, 'last element']
 
 function pushString(arr) {
   // CODE HERE
+  arr[arr.length] = ('last element')
   
   console.log(arr);
 }
@@ -60,6 +61,7 @@ mutateZeroElem([1,2,3]) ===> [1, 2, 3, true]
 
 function push(array, value) {
   // CODE HERE
+  array[array.length] = value;
 }
 
 /*
@@ -82,12 +84,15 @@ true
 
 function printElements(array) {
   // CODE HERE
+  array.forEach(element => console.log(element))
+    
 }
 
 /*
 QUESTION 4
 
-CREATE A FUNCTION THAT TAKES ONE ARGUMENT, AN ARRAY, AND RETURNS A NEW ARRAY THAT HAS ONLY UNIQUE VALUES IN THE SAME ORDER THEY FIRST APPEAR IN THE ORIGINAL ARRAY
+CREATE A FUNCTION THAT TAKES ONE ARGUMENT, AN ARRAY, AND RETURNS A NEW ARRAY THAT HAS ONLY UNIQUE VALUES 
+IN THE SAME ORDER THEY FIRST APPEAR IN THE ORIGINAL ARRAY
 
 DON'T USE indexOF!!!!!!
 
@@ -111,6 +116,8 @@ unique([1,2,3,2,3,2]) ===> [1, 2, 3];
 
 function unique(array) {
   // CODE HERE
+  let uniqueArr = [...new Set(array)]
+  console.log(uniqueArr)
 }
 
 /*
@@ -127,6 +134,7 @@ HINT USE AN INNER FOR-LOOP
 
 function compare(array1, array2) {
   // CODE HERE
+  
 }
 
 /*
@@ -143,6 +151,12 @@ compareArrays([1, 2, 3, 4], [1, 2]) ====> [1, 2]
 
 function compareArrays(array1, array2) {
   // CODE HERE
+ 
+  let arr1 = array1.toString();
+  let arr2 = array2.toString();
+
+  console.log(arr1 === arr2)
+
 }
 
 /*
@@ -158,13 +172,29 @@ compareArraysOpposite([1,2,3,4], [1,3]) ===> [2, 4]
 
 function compareArraysOpposite(array1, array2) {
   // CODE HERE
+let uniqueArr = [];
+let duplicate;
+  for(let i = 0; i < array1.length; i++){
+    duplicate = false;
+    for(let j = 0; j < array2.length; j++){
+     if(array1[i] == array2[j]){
+      duplicate = true;
+      break; 
+    }
+   }
+   if(duplicate == false){
+   uniqueArr.push(array1[i]);
+   }
+  }
+  console.log(uniqueArr);
 }
 
 /*
 QUESTION 8
 
 
-CREATE A FUNCTION THAT TAKES THREE ARGUMENTS, A 2D ARRAY AND TWO INTEGERS TO REPRESENT COLUMNS AND ROWS. THE FUNCTION RETURNS THE VALUE OF THAT COLUMN AND ROW
+CREATE A FUNCTION THAT TAKES THREE ARGUMENTS, A 2D ARRAY AND TWO INTEGERS TO REPRESENT COLUMNS AND ROWS.
+ THE FUNCTION RETURNS THE VALUE OF THAT COLUMN AND ROW
 
 
 2-D ARRAY EXAMPLE
@@ -183,6 +213,7 @@ retrieveValue(twoDimentionArray, 3, 1) ===> 1
 
 function retrieveValue(arr, row, col) {
   // CODE HERE
+  return arr[row][col];
 }
 
 /*
