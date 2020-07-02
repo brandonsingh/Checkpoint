@@ -28,7 +28,10 @@ CREATE A FUNCTION THAT ACCEPTS ONE ARGUMENT, THE NUMBER OF TIMES IT WILL CONSOLE
 */
 
 function dynamicHelloWorld(num) {
-  // CODE HERE
+  // CODE HERE\
+  for (var i = 0; i < num; i++) {
+    console.log('hello world');
+  }
 }
 
 /*
@@ -40,6 +43,8 @@ CREATE A FUNCTION THAT ACCEPTS A STRING AND WILL LOG TO THE CONSOLE EACH CHARACT
 
 function logEachChar(str) {
   // CODE HERE
+  for(let i = 0; i < str.length; i++)
+    console.log(str[i]);
 }
 
 /*
@@ -55,6 +60,13 @@ e.g. checkIfCharExists('hello', 'l') ===> true
 
 function checkIfCharExists(str, char) {
   // CODE HERE
+  for(let i = 0; i < str.length; i++){
+    if(str[i] === char){
+      return true;
+    }else if (!str.includes(char)){
+      return false;
+    }
+  }
 }
 
 /*
@@ -69,12 +81,21 @@ e.g. indexOf('hello', 'l') ===> 2
 
 function indexOf(str, char) {
   // CODE HERE
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] === char) {
+      return i;
+    }else if (!str.includes(char)) {
+      return -1;
+    }
+  }
 }
 
 /*
 QUESTION 5
 
-CREATE A FUNCTION THAT TAKES ONE ARGUMENTS, A NUMBER,  AND CONSOLE.LOGS THE NUMBERS 1 to ARGUMENT. BUT FOR MULTIPLES OF THREE CONSOLE.LOG "Fizz" INSTEAD OF THE NUMBER AND FOR THE MULTIPLES OF FIVE CONSOLE.LOG "Buzz". FOR NUMBERS WHICH ARE MULTIPLES OF BOTH THREE AND FIVE PRINT "FizzBuzz".
+CREATE A FUNCTION THAT TAKES ONE ARGUMENTS, A NUMBER, AND CONSOLE.LOGS THE NUMBERS 1 to ARGUMENT. 
+BUT FOR MULTIPLES OF THREE CONSOLE.LOG "Fizz" INSTEAD OF THE NUMBER AND FOR THE MULTIPLES OF FIVE CONSOLE.LOG "Buzz".
+ FOR NUMBERS WHICH ARE MULTIPLES OF BOTH THREE AND FIVE PRINT "FizzBuzz".
 
 
 e.g. indexOf(15)
@@ -101,6 +122,17 @@ FizzBuzz
 
 function fizzBuzz(num) {
   // CODE HERE
+  for(let i = 1; i <= num; i++){
+    if(i % 3 === 0 && i % 5 === 0) {
+      console.log('FizzBuzz');
+    }else if(i % 3 === 0) {
+      console.log('Fizz');
+    }else if(i % 5 === 0) {
+      console.log('Buzz');
+    }else {
+      console.log(i)
+    }
+  }
 }
 
 /*
@@ -115,6 +147,14 @@ THE FIBONACCI SEQUENCE STARTS WITH 1 AND 1 AND THEN THE NEXT NUMBER IS THE ADDIT
 
 function fibonacci(n) {
   // CODE HERE
+  let first = 0, second = 1, fibNum = 1;
+    for(let i = 2; i <= n; i++) {
+        fibNum = first + second;
+        first = second;
+        second = fibNum;
+    }
+    return fibNum;
+
 }
 
 console.log(fibonacci(5));
